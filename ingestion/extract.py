@@ -55,11 +55,10 @@ def fetch_all_pages(endpoint):
     return results
 
 def extract_recovery():
-    print("Extracting recovery data (via cycles)...")
-    data = fetch_all_pages("/cycle")
-    recovery_data = [c for c in data if c.get("recovery") is not None]
-    print(f"  Retrieved {len(recovery_data)} recovery records")
-    return recovery_data
+    print("Extracting recovery data...")
+    data = fetch_all_pages("/recovery")
+    print(f"  Retrieved {len(data)} recovery records")
+    return data
 
 def extract_sleep():
     print("Extracting sleep data...")
